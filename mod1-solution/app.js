@@ -16,19 +16,16 @@ function LunchCheckController($scope) {
   $scope.messageType = "";
 
   $scope.checkItems = function() {
-    //console.log("lunchItems = ", $scope.lunchItems);
-    if ($scope.lunchItems === ""){
-      $scope.message = msgEnterData;
-      $scope.messageType = "Error";
-      return;
-    }
-
     var splitLunchItems = $scope.lunchItems.split(comma);
     var numItems = numActualItems(splitLunchItems);
     //console.log("numItems = ", numItems);
 
     $scope.messageType = "Info";
-    if (numItems <= 3) {
+    if (numItems == 0){
+      $scope.message = msgEnterData;
+      $scope.messageType = "Error";
+    }
+    else if (numItems <= 3) {
       $scope.message = msgEnjoy;
     }else {
       $scope.message = msgTooMuch;
