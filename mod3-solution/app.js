@@ -18,6 +18,7 @@ function NarrowItDownController(MenuSearchService) {
 
      if ((!menu.searchTerm) || (menu.searchTerm === "")){
        menu.errorMessage = "Nothing found!";
+       menu.found = [];
        return;
      }
 
