@@ -40,8 +40,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         function ($stateParams, MenuDataService) {
           return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
           .then(function (response) {
-            console.log("response = ", response);
-            console.log("response.data.menu_items = ", response.data.menu_items);
             return response.data.menu_items;
           });
       }]
