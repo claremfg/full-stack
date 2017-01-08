@@ -19,6 +19,7 @@ function SignUpController(MenuService, UserService) {
           UserService.addUser($ctrl.user);
 
           $ctrl.completed = true;
+          $ctrl.favouriteError = false;
         })
         .catch(function (error) {
           $ctrl.completed = false;
