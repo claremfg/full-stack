@@ -53,7 +53,6 @@
           ng-model="signupCtrl.user.favourite.short_name"
           required
           minlength="1">
-          {{ reg.user.favourite }}
           <span
             ng-if="(signupForm.favourite.$error.minlength || signupForm.favourite.$error.required) && signupForm.favourite.$touched">
             Favourite must be at least 1 characters long
